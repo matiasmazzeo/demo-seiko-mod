@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seiko Mod Configurator</title>
+  <style>
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#0f1216;color:#e6edf3}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:linear-gradient(180deg,#131821,#0f1216)}
+    header h1{font-size:18px;margin:0}
+    .container{display:grid;grid-template-columns:360px 1fr;gap:16px;padding:16px}
+    @media(max-width:900px){.container{grid-template-columns:1fr}}
+    .card{background:#161b22;border:1px solid #262b33;border-radius:14px;padding:14px;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+    .stack{display:flex;flex-direction:column;gap:12px}
+    .preview-wrap{display:flex;align-items:center;justify-content:center}
+    .preview{position:relative;width:min(92vw,560px);aspect-ratio:1/1;background:radial-gradient(120% 120% at 50% 30%,#1d2430 0%,#0d1117 60%);border-radius:16px;overflow:hidden;border:1px solid #232a33}
+    .preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+    .preview .watermark{position:absolute;right:8px;bottom:8px;opacity:.25;font-size:12px}
+    label{font-size:12px;color:#8b949e;margin-bottom:6px;display:block}
+    select{width:100%;padding:10px 12px;background:#0d1117;border:1px solid #30363d;color:#e6edf3;border-radius:10px}
+    .row{display:flex;align-items:center;justify-content:space-between}
+    .price{font-size:24px;font-weight:700}
+    .btn{appearance:none;border:1px solid #2f353e;background:#10151c;color:#e6edf3;padding:10px 12px;border-radius:10px;cursor:pointer}
+    .btn.primary{background:#58a6ff;color:#0a0f15;border:0;font-weight:700}
+  </style>
+</head>
+<body>
+<header><h1>Seiko Mod Configurator</h1></header>
+<div class="container">
+  <div class="card stack">
+    <div class="row"><div class="price" id="total">$0</div></div>
+    <div id="controls" class="stack"></div>
+    <button class="btn primary" id="exportPng">Descargar PNG</button>
+  </div>
+  <div class="card preview-wrap"><div class="preview" id="preview"><div class="watermark">Vista previa</div></div></div>
+</div>
+<script>
+async function loadJSON(url){const res=await fetch(url);return res.json();}
+const fmt=v=>'$'+v.toFixed(2);
+let catalog={},state={};
+const $=s=>document.querySelector(s);
+const preview=$('#preview'),controls=$('#controls');
+async function init(){
+  catalog=await loadJSON('catalogo.json');
+  catalog.layer_order.forEach(layer=>{
+    const def=catalog.layers[layer];
+    const label=document.createElement('label');label.textContent=def.label;
+    const sel=document.createElement('select');
+    sel.innerHTML='<option value=\"\">— Elegir —</option>'+
+      def.items.map(x=>`<option value=\"${x.id}\">${x.name} (${fmt(x.price)})</option>`).join('');
+    sel.onchange=e=>{state[layer]=e.target.value;render();}
+    controls.append(label,sel);
+  });
+  render();
+}
+async function render(){
+  preview.querySelectorAll('img').forEach(x=>x.remove());
+  let total=0;
+  for(const layer of catalog.layer_order){
+    const id=state[layer];
+    if(!id) continue;
+    const item=catalog.layers[layer].items.find(x=>x.id===id);
+    total+=item.price;
+    const img=document.createElement('img');
+    img.src=item.img;img.alt=layer;preview.append(img);
+  }
+  $('#total').textContent=fmt(total);
+}
+$('#exportPng').onclick=async()=>{
+  const canvas=document.createElement('canvas');const W=1200,H=1200;canvas.width=W;canvas.height=H;const ctx=canvas.getContext('2d');
+  for(const layer of catalog.layer_order){
+    const id=state[layer];if(!id) continue;
+    const item=catalog.layers[layer].items.find(x=>x.id===id);
+    const img=await loadImage(item.img);ctx.drawImage(img,0,0,W,H);
+  }
+  const a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download='reloj.png';a.click();
+};
+function loadImage(src){return new Promise((res,rej)=>{const i=new Image();i.crossOrigin='anonymous';i.onload=()=>res(i);i.onerror=rej;i.src=src;});}
+init();
+</script>
+</body>
+</html>

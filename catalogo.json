@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "currency": "USD",
+    "canvas": { "width": 1200, "height": 1200 }
+  },
+  "layer_order": ["case", "dial", "hands", "bezel", "strap"],
+  "layers": {
+    "case": {
+      "label": "Caja",
+      "items": [
+        {
+          "id": "case_skx007",
+          "name": "Caja SKX007",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/case_skx007.png",
+          "price": 120
+        },
+        {
+          "id": "case_turtle",
+          "name": "Caja Turtle",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/case_turtle.png",
+          "price": 140
+        },
+        {
+          "id": "case_field38",
+          "name": "Caja Field 38 mm",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/case_field38.png",
+          "price": 110
+        }
+      ]
+    },
+    "dial": {
+      "label": "Dial",
+      "items": [
+        {
+          "id": "dial_black",
+          "name": "Dial Negro",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/dial_black.png",
+          "price": 60,
+          "compat": { "allow": { "case": ["case_skx007", "case_turtle", "case_field38"] } }
+        },
+        {
+          "id": "dial_blue_sunburst",
+          "name": "Dial Azul Sunburst",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/dial_blue.png",
+          "price": 75,
+          "compat": { "allow": { "case": ["case_skx007", "case_turtle"] } }
+        },
+        {
+          "id": "dial_green_military",
+          "name": "Dial Verde Militar",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/dial_green.png",
+          "price": 70,
+          "compat": { "allow": { "case": ["case_field38", "case_skx007"] } }
+        }
+      ]
+    },
+    "hands": {
+      "label": "Agujas",
+      "items": [
+        {
+          "id": "hands_mercedes",
+          "name": "Agujas Mercedes",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/hands_mercedes.png",
+          "price": 45
+        },
+        {
+          "id": "hands_snowflake",
+          "name": "Agujas Snowflake",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/hands_snowflake.png",
+          "price": 49
+        },
+        {
+          "id": "hands_dauphine",
+          "name": "Agujas Dauphine",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/hands_dauphine.png",
+          "price": 42
+        }
+      ]
+    },
+    "bezel": {
+      "label": "Bisel",
+      "items": [
+        {
+          "id": "bezel_pepsi",
+          "name": "Bisel Pepsi",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/bezel_pepsi.png",
+          "price": 55,
+          "compat": { "allow": { "case": ["case_skx007"] } }
+        },
+        {
+          "id": "bezel_black",
+          "name": "Bisel Negro",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/bezel_black.png",
+          "price": 50
+        },
+        {
+          "id": "bezel_goldtone",
+          "name": "Bisel Tono Oro",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/bezel_gold.png",
+          "price": 65
+        }
+      ]
+    },
+    "strap": {
+      "label": "Correa",
+      "items": [
+        {
+          "id": "strap_steel",
+          "name": "Brazalete de Acero",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/strap_steel.png",
+          "price": 65
+        },
+        {
+          "id": "strap_rubber_black",
+          "name": "Correa de Caucho Negra",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/strap_rubber.png",
+          "price": 35
+        },
+        {
+          "id": "strap_nato_green",
+          "name": "Correa Nylon NATO Verde",
+          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/strap_nato.png",
+          "price": 40
+        }
+      ]
+    }
+  },
+  "notes": [
+    "Todas las capas (case, dial, hands, bezel, strap) deben tener el mismo tamaño y centro de alineación.",
+    "Usar formato PNG transparente 1200×1200 px.",
+    "Precios y compatibilidades son de ejemplo y pueden editarse fácilmente."
+  ]
+}
