@@ -11,19 +11,19 @@
         {
           "id": "case_skx007",
           "name": "Caja SKX007",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/case_skx007.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/case_skx007.png",
           "price": 120
         },
         {
           "id": "case_turtle",
           "name": "Caja Turtle",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/case_turtle.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/case_turtle.png",
           "price": 140
         },
         {
           "id": "case_field38",
           "name": "Caja Field 38 mm",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/case_field38.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/case_field38.png",
           "price": 110
         }
       ]
@@ -34,21 +34,21 @@
         {
           "id": "dial_black",
           "name": "Dial Negro",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/dial_black.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/dial_black.png",
           "price": 60,
           "compat": { "allow": { "case": ["case_skx007", "case_turtle", "case_field38"] } }
         },
         {
           "id": "dial_blue_sunburst",
           "name": "Dial Azul Sunburst",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/dial_blue.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/dial_blue_sunburst.png",
           "price": 75,
           "compat": { "allow": { "case": ["case_skx007", "case_turtle"] } }
         },
         {
           "id": "dial_green_military",
           "name": "Dial Verde Militar",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/dial_green.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/dial_green_military.png",
           "price": 70,
           "compat": { "allow": { "case": ["case_field38", "case_skx007"] } }
         }
@@ -60,19 +60,19 @@
         {
           "id": "hands_mercedes",
           "name": "Agujas Mercedes",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/hands_mercedes.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/hands_mercedes.png",
           "price": 45
         },
         {
           "id": "hands_snowflake",
           "name": "Agujas Snowflake",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/hands_snowflake.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/hands_snowflake.png",
           "price": 49
         },
         {
           "id": "hands_dauphine",
           "name": "Agujas Dauphine",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/hands_dauphine.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/hands_dauphine.png",
           "price": 42
         }
       ]
@@ -83,20 +83,20 @@
         {
           "id": "bezel_pepsi",
           "name": "Bisel Pepsi",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/bezel_pepsi.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/bezel_pepsi.png",
           "price": 55,
           "compat": { "allow": { "case": ["case_skx007"] } }
         },
         {
           "id": "bezel_black",
           "name": "Bisel Negro",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/bezel_black.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/bezel_black.png",
           "price": 50
         },
         {
           "id": "bezel_goldtone",
           "name": "Bisel Tono Oro",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/bezel_gold.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/bezel_goldtone.png",
           "price": 65
         }
       ]
@@ -107,19 +107,19 @@
         {
           "id": "strap_steel",
           "name": "Brazalete de Acero",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/strap_steel.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/strap_steel.png",
           "price": 65
         },
         {
           "id": "strap_rubber_black",
           "name": "Correa de Caucho Negra",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/strap_rubber.png",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/strap_rubber_black.png",
           "price": 35
         },
         {
           "id": "strap_nato_green",
-          "name": "Correa Nylon NATO Verde",
-          "img": "https://raw.githubusercontent.com/imaginary-cdn/horology-assets/main/seiko-demo/strap_nato.png",
+          "name": "Correa NATO Verde",
+          "img": "https://matiasmazzeo.github.io/demo-seiko-mod/assets/strap_nato_green.png",
           "price": 40
         }
       ]
